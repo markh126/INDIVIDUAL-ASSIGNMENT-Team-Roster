@@ -1,10 +1,26 @@
 {
-    "-NM6r2CA6r5SGunu9V5w" : {
-        "firebaseKey" : "-NM6r2CA6r5SGunu9V5w",
-        "image" : "https://i.pinimg.com/originals/ab/cb/51/abcb51c78d9710a71ab1bae4ef4382a4.jpg",
-        "name" : "Alton Xivo",
-        "class" : "Swashbuckler Rogue",
-        "teamLeader" : false,
-        "uid" : "FPZVexsJOKRgjxLg5AGXCsDpyxy1"
+    "-NM6r2CA6r5SGunu9V5w": {
+        "class": "Swashbuckler Rogue",
+        "firebaseKey": "-NM6r2CA6r5SGunu9V5w",
+        "image": "https://i.pinimg.com/originals/ab/cb/51/abcb51c78d9710a71ab1bae4ef4382a4.jpg",
+        "name": "Alton Xivo",
+        "teamLeader": false,
+        "uid": "FPZVexsJOKRgjxLg5AGXCsDpyxy1"
+    },
+    "-NMKdHlX6SRY3aLBeait": {
+        "class": "Fighter",
+        "firebaseKey": "-NMKdHlX6SRY3aLBeait",
+        "image": "https://static.wikia.nocookie.net/papercraftgaming/images/b/be/148_THUMBNAIL_Duergar_Ranger_01_PrintableHeroes.jpg/revision/latest?cb=20200228100551",
+        "name": "Rock",
+        "teamLeader": false,
+        "uid": "FPZVexsJOKRgjxLg5AGXCsDpyxy1"
+    },
+    "-NMKeK8Zgo6tu3_cNjhC": {
+        "class": "Cleric: Death Domain",
+        "firebaseKey": "-NMKeK8Zgo6tu3_cNjhC",
+        "image": "https://cdna.artstation.com/p/assets/images/images/020/414/818/large/bastien-aufrere-banor-final.jpg?1567680429",
+        "name": "Doom the White",
+        "teamLeader": true,
+        "uid": "FPZVexsJOKRgjxLg5AGXCsDpyxy1"
     }
 }
