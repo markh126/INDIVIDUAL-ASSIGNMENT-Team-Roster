@@ -82,4 +82,5 @@ To learn more about Next.js, take a look at the following resources:
 
 
 Google Slides Flowchart/Wireframe Presentation - https://docs.google.com/presentation/d/1gO0yZUBHf36WtDjuuFHeOTM3PEEJ7ITBQsXPCiRmjY8/edit?usp=sharing
+
 DB Diagram - https://dbdiagram.io/d/63cc291c296d97641d7b342b
