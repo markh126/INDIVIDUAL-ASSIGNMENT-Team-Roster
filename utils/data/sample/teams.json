@@ -2,6 +2,13 @@
     "-NMKhCcykOftRr133Tiv": {
         "firebaseKey": "-NMKhCcykOftRr133Tiv",
         "image": "https://kollincooley.files.wordpress.com/2017/09/29f8651e167e6751214a5417c1d065fe.jpg",
-        "team_name": "The Guild"
+        "team_name": "The Guild",
+        "uid": "FPZVexsJOKRgjxLg5AGXCsDpyxy1"
+    },
+    "-MiBwAF5wOY00AYJm7cR": {
+        "firebaseKey": "-MiBwAF5wOY00AYJm7cR",
+        "image": "http://www.worldanvil.com/media/cache/cover/uploads/images/76e40dd150e56516a40ab9baf40ede4e.jpg",
+        "team_name": "The Inn",
+        "uid": "FPZVexsJOKRgjxLg5AGXCsDpyxy1"
     }
 }

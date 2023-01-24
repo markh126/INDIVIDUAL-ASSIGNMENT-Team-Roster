@@ -10,7 +10,7 @@ export default function ViewTeamMember() {
 
   useEffect(() => {
     getSingleTeamMember(firebaseKey).then(setMemberDetails);
-  }, [firebaseKey]);
+  }, []);
 
   return (
     <div>

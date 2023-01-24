@@ -1,12 +1,12 @@
-import Link from 'next/link';
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
+import Link from 'next/link';
 import PropTypes from 'prop-types';
-import { deleteTeam } from '../api/teams';
+import { deleteTeam } from '../api/teamsApi';
 
-export default function TeamCard({ teamObj, onUpdate }) {
+function TeamCard({ teamObj, onUpdate }) {
   const deleteThisTeam = () => {
-    if (window.confirm(`Delete ${teamObj.name}?`)) {
+    if (window.confirm(`Delete ${teamObj.team_name}?`)) {
       deleteTeam(teamObj.firebaseKey).then(() => onUpdate());
     }
   };
@@ -15,7 +15,7 @@ export default function TeamCard({ teamObj, onUpdate }) {
     <Card style={{ width: '18rem', margin: '10px' }}>
       <Card.Img variant="top" src={teamObj.image} style={{ height: '400px' }} />
       <Card.Body>
-        <Card.Title>{teamObj.name}</Card.Title>
+        <Card.Title>{teamObj.team_name}</Card.Title>
         <Link href={`/teams/${teamObj.firebaseKey}`} passHref>
           <Button variant="primary" className="m-2">VIEW</Button>
         </Link>
@@ -33,8 +33,10 @@ export default function TeamCard({ teamObj, onUpdate }) {
 TeamCard.propTypes = {
   teamObj: PropTypes.shape({
     image: PropTypes.string,
-    name: PropTypes.string,
+    team_name: PropTypes.string,
     firebaseKey: PropTypes.string,
   }).isRequired,
   onUpdate: PropTypes.func.isRequired,
 };
+
+export default TeamCard;
