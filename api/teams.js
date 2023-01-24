@@ -2,8 +2,8 @@ import { clientCredentials } from '../utils/client';
 
 const endpoint = clientCredentials.databaseURL;
 
-const getTeamMembers = (uid) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/team_members.json?orderBy="uid"&equalTo="${uid}"`, {
+const getTeams = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/teams.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -20,8 +20,8 @@ const getTeamMembers = (uid) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const getSingleTeamMember = (firebaseKey) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/team_members/${firebaseKey}.json`, {
+const getSingleTeam = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/teams/${firebaseKey}.json`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -32,8 +32,8 @@ const getSingleTeamMember = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const createTeamMember = (payload) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/team_members/.json`, {
+const createTeam = (payload) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/teams/.json`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -45,8 +45,8 @@ const createTeamMember = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const updateTeamMember = (payload) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/team_members/${payload.firebaseKey}.json`, {
+const updateTeam = (payload) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/teams/${payload.firebaseKey}.json`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
@@ -58,8 +58,8 @@ const updateTeamMember = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const deleteTeamMember = (firebaseKey) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/team_members/${firebaseKey}.json`, {
+const deleteTeam = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/teams/${firebaseKey}.json`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
@@ -71,9 +71,9 @@ const deleteTeamMember = (firebaseKey) => new Promise((resolve, reject) => {
 });
 
 export {
-  getTeamMembers,
-  getSingleTeamMember,
-  deleteTeamMember,
-  createTeamMember,
-  updateTeamMember,
+  getTeams,
+  getSingleTeam,
+  deleteTeam,
+  createTeam,
+  updateTeam,
 };

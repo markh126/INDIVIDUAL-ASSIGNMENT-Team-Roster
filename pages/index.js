@@ -20,7 +20,7 @@ function Home() {
 
   return (
     <div className="text-center my-4">
-      <Link href="/team_member/new" passHref>
+      <Link href="/members/new" passHref>
         <Button>Add A New Team Member</Button>
       </Link>
       <div className="d-flex flex-wrap">

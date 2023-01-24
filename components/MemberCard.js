@@ -6,7 +6,9 @@ import { deleteTeamMember } from '../api/teamMember';
 
 function MemberCard({ memberObj, onUpdate }) {
   const deleteThisTeamMember = () => {
-    deleteTeamMember(memberObj.firebaseKey).then(() => onUpdate());
+    if (window.confirm(`Delete ${memberObj.name}?`)) {
+      deleteTeamMember(memberObj.firebaseKey).then(() => onUpdate());
+    }
   };
 
   return (
