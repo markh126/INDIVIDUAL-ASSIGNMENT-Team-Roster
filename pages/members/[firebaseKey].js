@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @next/next/no-img-element */
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
@@ -22,6 +23,7 @@ export default function ViewTeamMember() {
           <h2>{memberDetails.name}
             {memberDetails.team_leader ? ' 🤍' : ''}
           </h2>
+          <p>{memberDetails.class}</p>
           <hr />
         </div>
       </div>
