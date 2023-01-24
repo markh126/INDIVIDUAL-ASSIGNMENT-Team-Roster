@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, FloatingLabel } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
@@ -10,7 +10,7 @@ const initialState = {
   name: '',
   class: '',
   image: '',
-  team_leader: false,
+  teamLeader: false,
 };
 
 export default function MemberForm({ obj }) {
@@ -34,7 +34,7 @@ export default function MemberForm({ obj }) {
     e.preventDefault();
     if (obj.firebaseKey) {
       updateTeamMember(formInput)
-        .then(() => router.push(`/member/${obj.firebaseKey}`));
+        .then(() => router.push(`/members/${obj.firebaseKey}`));
     } else {
       const payload = { ...formInput, uid: user.uid };
       createTeamMember(payload).then(({ name }) => {
@@ -48,9 +48,8 @@ export default function MemberForm({ obj }) {
 
   return (
     <Form onSubmit={handleSubmit}>
-
-      <Form.Group className="mb-3" controlId="memberName">
-        <Form.Label>Name</Form.Label>
+      <h2 className="text-white mt-5">{obj.firebaseKey ? 'Update' : 'Create'} Team Member</h2>
+      <FloatingLabel className="mb-3" label="Name" controlId="memberName">
         <Form.Control
           type="text"
           placeholder="Enter Name"
@@ -59,10 +58,9 @@ export default function MemberForm({ obj }) {
           onChange={handleChange}
           required
         />
-      </Form.Group>
+      </FloatingLabel>
 
-      <Form.Group className="mb-3" controlId="memberClass">
-        <Form.Label>Class</Form.Label>
+      <FloatingLabel className="mb-3" label="Class" controlId="memberClass">
         <Form.Control
           type="text"
           placeholder="Enter Class"
@@ -71,10 +69,9 @@ export default function MemberForm({ obj }) {
           onChange={handleChange}
           required
         />
-      </Form.Group>
+      </FloatingLabel>
 
-      <Form.Group className="mb-3" controlId="memberImage">
-        <Form.Label>Image</Form.Label>
+      <FloatingLabel className="mb-3" label="Image" controlId="memberImage">
         <Form.Control
           type="url"
           placeholder="Enter Image Url"
@@ -83,27 +80,24 @@ export default function MemberForm({ obj }) {
           onChange={handleChange}
           required
         />
-      </Form.Group>
+      </FloatingLabel>
 
-      <Form.Group className="mb-3" controlId="memberSwitch">
-        <Form.Check
-          className="text-white mb-3"
-          type="switch"
-          id="team_leader"
-          name="team_leader"
-          label="Team Leader"
-          checked={formInput.team_leader}
-          onChange={(e) => {
-            setFormImput((prevState) => ({
-              ...prevState,
-              team_leader: e.target.checked,
-            }));
-          }}
-        />
-      </Form.Group>
+      <Form.Check
+        className="text-white mb-3"
+        type="switch"
+        id="teamLeader"
+        name="teamLeader"
+        label="Team Leader"
+        checked={formInput.teamLeader}
+        onChange={(e) => {
+          setFormImput((prevState) => ({
+            ...prevState,
+            teamLeader: e.target.checked,
+          }));
+        }}
+      />
 
-      <Button variant="primary" type="submit">
-        Submit
+      <Button variant="primary" type="submit">{obj.firebaseKey ? 'Update' : 'Create'} Team Member
       </Button>
 
     </Form>
@@ -115,7 +109,7 @@ MemberForm.propTypes = {
     name: PropTypes.string,
     class: PropTypes.string,
     image: PropTypes.string,
-    team_leader: PropTypes.bool,
+    teamLeader: PropTypes.bool,
     firebaseKey: PropTypes.string,
   }),
 };
