@@ -1,10 +1,16 @@
 import React from 'react';
+import Head from 'next/head';
 import UserProfile from '../components/UserProfile';
 
 export default function Profile() {
   return (
-    <div>
-      <UserProfile />
-    </div>
+    <>
+      <Head>
+        <title>Profile Page</title>
+      </Head>
+      <div>
+        <UserProfile />
+      </div>
+    </>
   );
 }
