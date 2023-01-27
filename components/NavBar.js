@@ -25,9 +25,13 @@ export default function NavBar() {
             <Link passHref href="/members/new">
               <Nav.Link>New Team Member</Nav.Link>
             </Link>
+            <Link passHref href="/team/new">
+              <Nav.Link>New Team</Nav.Link>
+            </Link>
             <Link passHref href="/profile">
               <Nav.Link>Profile</Nav.Link>
             </Link>
+
           </Nav>
         </Navbar.Collapse>
       </Container>

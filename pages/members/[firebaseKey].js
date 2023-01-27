@@ -21,7 +21,7 @@ export default function ViewTeamMember() {
         </div>
         <div className="text-white ms-5 details">
           <h2>{memberDetails.name}
-            {memberDetails.team_leader ? ' 🤍' : ''}
+            {memberDetails.teamLeader ? ' ⚔️' : ''}
           </h2>
           <p>{memberDetails.class}</p>
           <hr />
