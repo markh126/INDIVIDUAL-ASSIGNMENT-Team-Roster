@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
 import { useAuth } from '../../utils/context/authContext';
 import { createTeamMember, updateTeamMember } from '../../api/teamMember';
+import { getTeams } from '../../api/teamsApi';
 
 const initialState = {
   name: '',
@@ -15,12 +16,15 @@ const initialState = {
 
 export default function MemberForm({ obj }) {
   const [formInput, setFormImput] = useState(initialState);
+  const [teams, setTeams] = useState([]);
   const router = useRouter();
   const { user } = useAuth();
 
   useEffect(() => {
+    getTeams(user.uid).then(setTeams);
+
     if (obj.firebaseKey) setFormImput(obj);
-  }, [obj]);
+  }, [obj, user]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -82,6 +86,29 @@ export default function MemberForm({ obj }) {
         />
       </FloatingLabel>
 
+      <FloatingLabel label="Team" controlId="memberTeamId">
+        <Form.Select
+          aria-label="Team Id"
+          name="team_id"
+          onChange={handleChange}
+          className="mb-3"
+          value={obj.team_id}
+          required
+        >
+          <option value="">Select A Team</option>
+          {
+            teams.map((team) => (
+              <option
+                key={team.firebaseKey}
+                value={team.firebaseKey}
+              >
+                {team.team_name}
+              </option>
+            ))
+          }
+        </Form.Select>
+      </FloatingLabel>
+
       <Form.Check
         className="text-white mb-3"
         type="switch"
@@ -110,6 +137,7 @@ MemberForm.propTypes = {
     class: PropTypes.string,
     image: PropTypes.string,
     teamLeader: PropTypes.bool,
+    team_id: PropTypes.string,
     firebaseKey: PropTypes.string,
   }),
 };
