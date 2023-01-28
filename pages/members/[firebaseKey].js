@@ -1,8 +1,7 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @next/next/no-img-element */
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
-import { getSingleTeamMember } from '../../api/teamMember';
+import { viewTeamMemberDetails } from '../../api/mergedData';
 
 export default function ViewTeamMember() {
   const [memberDetails, setMemberDetails] = useState({});
@@ -10,8 +9,8 @@ export default function ViewTeamMember() {
   const { firebaseKey } = router.query;
 
   useEffect(() => {
-    getSingleTeamMember(firebaseKey).then(setMemberDetails);
-  }, []);
+    viewTeamMemberDetails(firebaseKey).then(setMemberDetails);
+  }, [firebaseKey]);
 
   return (
     <div>

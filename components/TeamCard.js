@@ -16,10 +16,10 @@ function TeamCard({ teamObj, onUpdate }) {
       <Card.Img variant="top" src={teamObj.image} style={{ height: '400px' }} />
       <Card.Body>
         <Card.Title>{teamObj.team_name}</Card.Title>
-        <Link href={`/teams/${teamObj.firebaseKey}`} passHref>
+        <Link href={`/team/${teamObj.firebaseKey}`} passHref>
           <Button variant="primary" className="m-2">VIEW</Button>
         </Link>
-        <Link href={`/teams/edit/${teamObj.firebaseKey}`} passHref>
+        <Link href={`/team/edit/${teamObj.firebaseKey}`} passHref>
           <Button variant="info">EDIT</Button>
         </Link>
         <Button variant="danger" onClick={deleteThisTeam} className="m-2">
