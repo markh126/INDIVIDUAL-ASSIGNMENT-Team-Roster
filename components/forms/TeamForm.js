@@ -31,13 +31,13 @@ export default function TeamForm({ obj }) {
     e.preventDefault();
     if (obj.firebaseKey) {
       updateTeam(teamInput)
-        .then(() => router.push('/teams'));
+        .then(() => router.push('/'));
     } else {
       const payload = { ...teamInput, uid: user.uid };
       createTeam(payload).then(({ name }) => {
         const patchPayload = { firebaseKey: name };
         updateTeam(patchPayload).then(() => {
-          router.push('/teams');
+          router.push('/');
         });
       });
     }
