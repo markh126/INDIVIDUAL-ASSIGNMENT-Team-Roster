@@ -3,6 +3,7 @@
 import { useRouter } from 'next/router';
 import React, { useState, useEffect } from 'react';
 import { viewTeamDetails } from '../../api/mergedData';
+import MemberCard from '../../components/MemberCard';
 
 export default function ViewTeams() {
   const [viewTeams, setViewTeams] = useState({});
@@ -27,6 +28,11 @@ export default function ViewTeams() {
           <h2>{viewTeams.team_name}
           </h2>
           <hr />
+        </div>
+        <div className="mb-3 d-flex flex-wrap">
+          {viewTeams.members?.map((member) => (
+            <MemberCard key={member.firebaseKey} memberObj={member} onUpdate={viewTeamAndMembers} />
+          ))}
         </div>
       </div>
     </div>
