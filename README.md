@@ -1,86 +1,33 @@
-# React/Next.js Template
+Team Roster - Individual Assessment
 
-[See Live Demo of this Template](https://drt-next-js-template.netlify.app/)
+This project is for users to CRUD new Teams and Team Members for their D&D campaigns. This is a great tool for keeping track of your characters and which campaigns they are a part of.
 
-## [Team Roster Instructions](./INSTRUCTIONS.md)
+Links to Google Slides and DB Diagram:
+https://docs.google.com/presentation/d/1gO0yZUBHf36WtDjuuFHeOTM3PEEJ7ITBQsXPCiRmjY8/edit?usp=sharing
+https://dbdiagram.io/d/63cc291c296d97641d7b342b
 
-## Topics
-- [Get Started](#get-started)
-- [Starting the Project](#starting-the-project)
-- [Using axios](#using-axios)
-- [Deploying on Netlify](#deploying-on-netlify)
-___
-## Getting Started
-### Use Template
-#### 1. To get started, click the GREEN "Use this Template" button at the top of the repo
-<img width="915" alt="Screen Shot 2022-07-06 at 12 54 01 PM" src="https://user-images.githubusercontent.com/29741570/177612998-4aac9237-5a1e-4f13-8ae0-468587521564.png">
+Link to the deployed project on Netlify:
+https://markh-team-roster.netlify.app
 
-#### 2. Make sure YOUR github account is selected in the dropdown and name your project
-<img width="763" alt="Screen Shot 2022-07-06 at 12 54 48 PM" src="https://user-images.githubusercontent.com/29741570/177613126-dd38f678-7553-4f27-8a4a-75680f14d71e.png">
+Link to the project on Github:
+https://github.com/markh126/INDIVIDUAL-ASSIGNMENT-Team-Roster.git
 
-#### 3. Clone your new repo to your local machine
-#### 4. Go to the **NEXT** section
+This project is designed for the user to manage the different Dungeons & Dragons characters that they have created and which teams they are a part of. Knowing these details will help manage and organize which characters they need at a given time, such as, when they are prepping for game day. It is very easy to lose track of your characters if you are involved in multiple campaigns or if you happen to play infrequently.
 
-## Starting the Project
-1. Create a Firebase project and set up authentication. Use [these videos](https://vimeo.com/showcase/codetracker-firebase) as a refresher if needed.
-1. Create a `.env` file at the root of the project
-1. Copy/Paste the contents of the `.env.sample` file to your newly created `.env` file.
-1. Copy over all of your Firebase values into the `.env` file.
-1. Open the `package.json` file and change the `name` property to the name of your application, and `author` to  your name.
-1. From your command line, be in the root directory and run `npm install` OR `npm i` for short.
-1. Next, run `npm run prepare`. This command sets up husky to track eslint errors on commit that will make your deploy fail on Netlify.
-1. To start your application, run `npm run dev`. THIS IS THE COMMAND YOU WILL USE TO RUN YOUR DEVELOPMENT SERVER FROM NOW ON.
-1. Open [http://localhost:3000](http://localhost:3000) with your browser.
+HOME: 
+<img width="1466" alt="Screenshot 2023-01-28 at 12 25 14 PM" src="https://user-images.githubusercontent.com/114036621/215284493-5abe8aa9-4fb9-4fc4-b5a5-15d76a58f41d.png">
 
-### If you see this, you are set to go!
-<img width="450" alt="Screen Shot 2022-07-06 at 1 07 27 PM" src="https://user-images.githubusercontent.com/29741570/177615077-9b6a75bc-0260-4d29-bb88-bd95a3140687.png">
+VIEW TEAM MEMBERS:
+<img width="1451" alt="Screenshot 2023-01-28 at 12 25 28 PM" src="https://user-images.githubusercontent.com/114036621/215284492-8eb199d8-12bc-4003-933d-363e8848d231.png">
 
+VIEW TEAM MEMBER DETAILS:
+<img width="1462" alt="Screenshot 2023-01-28 at 12 26 19 PM" src="https://user-images.githubusercontent.com/114036621/215284489-08468e97-aef0-477a-9857-62954c3e7777.png">
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+VIEW TEAM DETAILS:
+<img width="1451" alt="Screenshot 2023-01-28 at 12 26 37 PM" src="https://user-images.githubusercontent.com/114036621/215284483-ce770019-5898-44d6-8715-b6e9a3a4612e.png">
 
-**NOTES:** 
-- If you see the following error, you did not follow all the setup steps correctly and failed to add your Firebase creds. Go back and do that NOW.
+CREATE TEAM FORM:
+<img width="1461" alt="Screenshot 2023-01-28 at 12 26 08 PM" src="https://user-images.githubusercontent.com/114036621/215284490-974c9ac4-53ee-40b0-8e1c-4879a297b483.png">
 
-<img width="1043" alt="Screen Shot 2022-07-06 at 11 18 45 AM" src="https://user-images.githubusercontent.com/29741570/177612501-c2628f18-4bbd-4de9-aae6-27ffba1172d6.png">
-
-### Using Axios
-> For every file you will need to make an XHR request in, you will need to require Axios
-```js
-import axios from 'axios';
-
-const examplePromise = () => {
-  axios.get('http://localhost:3001/example')
-    .then((data) => {
-      console.warn(data);
-    })
-    .catch((error) => {
-      console.error(error);
-    });
-});
-```
-
-### Deploying on Netlify
-Netlify will automatically detect your project and prepopulate the settings, but should something go wrong and it does not, here are the commands:
-
-- Build Command: `npm run build`
-- Publish directory: `.next`
-
-#### Additional Steps to Take on Netlify
-- Add Environmental Variables
-    - Any Enviromental variables you are using in your `.env` file should be added to Netlify. 
-        - Go to Site settings > Build & deploy > Environment > Environment variables and the keys and values there.
-
-- Update Firebase URL Settings
-    - In Firebase under Authentication select sign in methods, scroll to Authorized domains. Add your Netlify URL.
-        
-## Learn More about Next.js
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-
-
-Google Slides Flowchart/Wireframe Presentation - https://docs.google.com/presentation/d/1gO0yZUBHf36WtDjuuFHeOTM3PEEJ7ITBQsXPCiRmjY8/edit?usp=sharing
-
-DB Diagram - https://dbdiagram.io/d/63cc291c296d97641d7b342b
+CREATE TEAM MEMBER FORM:
+<img width="1465" alt="Screenshot 2023-01-28 at 12 25 37 PM" src="https://user-images.githubusercontent.com/114036621/215284491-88288836-c7c8-4e28-b597-67ac120d77bc.png">
