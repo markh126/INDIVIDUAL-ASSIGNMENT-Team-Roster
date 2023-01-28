@@ -22,7 +22,9 @@ export default function ViewTeamMember() {
           <h2>{memberDetails.name}
             {memberDetails.teamLeader ? ' ⚔️' : ''}
           </h2>
-          <p>{memberDetails.class}</p>
+          <p>{memberDetails.class}
+            <br />Team: {memberDetails.teamObject?.team_name}
+          </p>
           <hr />
         </div>
       </div>
